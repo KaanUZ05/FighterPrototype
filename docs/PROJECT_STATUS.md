@@ -1,6 +1,6 @@
 # PROJECT STATUS — handoff log (update after every task)
 
-**Current engineering stage:** PHASE_00 / T001 through T003 verified.
+**Current engineering stage:** PHASE_00 / T001 through T004 verified. G0 owner review pending.
 
 ## Observed evidence from the user's Codex result (2026-11-25)
 
@@ -27,19 +27,24 @@
 - Development Editor compiled the new automation test, and the headless `FighterPrototype.Smoke.ThirdPersonBaseline` test passed. The runner returned a nonzero exit code for a filter with zero matches.
 - Commands, report template and evidence in [`TASK_003_RESULT.md`](../reports/TASK_003_RESULT.md).
 
+## Verified in T004
+
+- `/Game/Fight/Maps/M_FightShell` is an opt-in level. Its `FightGameMode` and `FighterCharacter` loaded and ran in PIE. The ThirdPerson default map, GameMode and pawn passed both automation and live PIE regression checks.
+- Commands, screenshot and class readback in [`TASK_004_RESULT.md`](../reports/TASK_004_RESULT.md).
+
 ## Still UNVERIFIED
 
 - Dual-input local play
-- Fight gameplay, dedicated game assets and automated gameplay tests
+- Fight gameplay, the greybox arena and automated gameplay tests
 
 ## Completed task IDs
 
-`T001` — PASS. `T002` — PASS. `T003` — PASS.
+`T001` — PASS. `T002` — PASS. `T003` — PASS. `T004` — PASS.
 
 ## Blockers
 
-None observed for T004.
+No technical blocker observed. G0 owner review precedes Phase 01.
 
 ## Next requested task
 
-`T004` — `tasks/phase_00/T004_FIGHT_MODULE_SHELL.md`
+`T005` — `tasks/phase_01/T005_SYMMETRIC_GREYBOX_STAGE.md` after G0 owner approval.

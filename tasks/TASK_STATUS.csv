@@ -2,7 +2,7 @@
 T001,00,G0,Project Audit And Build,tasks/phase_00/T001_PROJECT_AUDIT_AND_BUILD.md,MCP read probe,PASS,Confirm original ThirdPerson map still opens after baseline; review T001 report.
 T002,00,G0,Mcp Write And Checkpoint,tasks/phase_00/T002_MCP_WRITE_AND_CHECKPOINT.md,T001,PASS,Inspect a screenshot or actor-list diff if provided; authorize any git init only if safe.
 T003,00,G0,Test And Report Harness,tasks/phase_00/T003_TEST_AND_REPORT_HARNESS.md,T002,PASS,Review test invocation and output.
-T004,00,G0,Fight Module Shell,tasks/phase_00/T004_FIGHT_MODULE_SHELL.md,T003,NOT_STARTED,PIE dedicated map; no unwanted edits to original level.
+T004,00,G0,Fight Module Shell,tasks/phase_00/T004_FIGHT_MODULE_SHELL.md,T003,PASS,PIE dedicated map; no unwanted edits to original level.
 T005,01,G1,Symmetric Greybox Stage,tasks/phase_01/T005_SYMMETRIC_GREYBOX_STAGE.md,T004,NOT_STARTED,Check arena visibly symmetric.
 T006,01,G1,Two Fighter Spawn,tasks/phase_01/T006_TWO_FIGHTER_SPAWN.md,T005,NOT_STARTED,Verify two visible bodies before enabling input.
 T007,01,G1,Lock Fighting Plane And Pushbox,tasks/phase_01/T007_LOCK_FIGHTING_PLANE_AND_PUSHBOX.md,T006,NOT_STARTED,Try running fighters into each other and both walls.
