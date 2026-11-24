@@ -1,6 +1,6 @@
 # PROJECT STATUS — handoff log (update after every task)
 
-**Current engineering stage:** PHASE_00 / T001 and T002 verified.
+**Current engineering stage:** PHASE_00 / T001 through T003 verified.
 
 ## Observed evidence from the user's Codex result (2026-11-25)
 
@@ -22,6 +22,11 @@
 - Local `main` has baseline commit `ec6e05b` and `origin` is configured for `KaanUZ05/FighterPrototype`. Git LFS verified 753 Unreal assets. The filesystem rollback checkpoint is `Saved/Phase00/T002-PreEdit/`.
 - Transaction and rollback evidence in [`TASK_002_RESULT.md`](../reports/TASK_002_RESULT.md).
 
+## Verified in T003
+
+- Development Editor compiled the new automation test, and the headless `FighterPrototype.Smoke.ThirdPersonBaseline` test passed. The runner returned a nonzero exit code for a filter with zero matches.
+- Commands, report template and evidence in [`TASK_003_RESULT.md`](../reports/TASK_003_RESULT.md).
+
 ## Still UNVERIFIED
 
 - Dual-input local play
@@ -29,12 +34,12 @@
 
 ## Completed task IDs
 
-`T001` — PASS. `T002` — PASS.
+`T001` — PASS. `T002` — PASS. `T003` — PASS.
 
 ## Blockers
 
-None observed for T003.
+None observed for T004.
 
 ## Next requested task
 
-`T003` — `tasks/phase_00/T003_TEST_AND_REPORT_HARNESS.md`
+`T004` — `tasks/phase_00/T004_FIGHT_MODULE_SHELL.md`

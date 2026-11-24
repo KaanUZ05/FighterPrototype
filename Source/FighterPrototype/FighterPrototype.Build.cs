@@ -21,7 +21,7 @@ public class FighterPrototype : ModuleRules
 			"Slate"
 		});
 
-		PrivateDependencyModuleNames.AddRange(new string[] { });
+		PrivateDependencyModuleNames.Add("EngineSettings");
 
 		PublicIncludePaths.AddRange(new string[] {
 			"FighterPrototype",
