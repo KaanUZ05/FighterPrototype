@@ -1,0 +1,3 @@
+TASK TO RUN: T###
+
+Read AGENTS.md, docs/PROJECT_STATUS.md, docs/01_VISION_AND_GDD.md, docs/02_COMBAT_RULES.md, docs/03_ARCHITECTURE.md, docs/06_ROADMAP.md, and the exact file tasks/phase_XX/T###_NAME.md for T###. Confirm all prerequisites have verified reports. Implement ONLY this single task in my currently open UE5.9 FighterPrototype project. Use the existing working Unreal MCP integration and actual engine APIs. Keep shared movement and normals identical for both fighters. Compile and test what is possible, report PASS/FAIL/NOT RUN, write reports/TASK_###_RESULT.md and update status. STOP when this one task is complete; do not begin any other task or alter unapproved creative decisions.

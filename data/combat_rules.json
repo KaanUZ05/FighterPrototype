@@ -1,0 +1,52 @@
+{
+  "document_version": "2.0",
+  "status": "PROVISIONAL_NOT_A_UE_DATA_ASSET",
+  "combat_hz": 60,
+  "max_health": 1000,
+  "round_seconds": 99,
+  "round_wins_to_win_match": 2,
+  "plane": {
+    "horizontal_axis": "X",
+    "locked_depth_axis": "Y",
+    "locked_depth_cm": 0,
+    "vertical_axis": "Z"
+  },
+  "shared_base_stats": {
+    "forward_walk_cm_s": 450,
+    "backward_walk_cm_s": 340,
+    "max_horizontal_acceleration_cm_s2": 2200,
+    "jump_apex_height_cm": 140,
+    "pushbox_capsule_radius_cm": 38,
+    "pushbox_capsule_halfheight_cm": 90,
+    "input_buffer_frames": 6
+  },
+  "fighter_definitions": {
+    "FighterA": {
+      "base_stats_ref": "SharedBaseStats",
+      "normal_moves_ref": "SharedNormalMoves",
+      "special_slots": [
+        "A_S1",
+        "A_S2"
+      ]
+    },
+    "FighterB": {
+      "base_stats_ref": "SharedBaseStats",
+      "normal_moves_ref": "SharedNormalMoves",
+      "special_slots": [
+        "B_S1",
+        "B_S2"
+      ]
+    }
+  },
+  "special_move_placeholders": {
+    "A_S1": "LungeStrike",
+    "A_S2": "ArcPulse",
+    "B_S1": "EnergyBolt",
+    "B_S2": "DelayedSigil"
+  },
+  "authoritative_notes": [
+    "Only one shared normal rules source",
+    "Use Unreal Data Assets after import, verify references",
+    "All values provisional until tested"
+  ]
+}

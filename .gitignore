@@ -1,0 +1,24 @@
+# Unreal build/cache artifacts
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+.vs/
+.vscode/
+*.sln
+*.slnx
+*.VC.db
+*.VC.opendb
+*.opensdf
+*.sdf
+*.suo
+*.user
+*.log
+# credentials / generated caches
+.codex/
+.env
+.env.*
+!.env.example
+# allow reports/evidence to be intentionally committed if desired; avoid large logs
+reports/evidence/*.tmp
+# do not ignore Content/ or Config/ (actual engine content required)

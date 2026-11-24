@@ -1,0 +1,5 @@
+MoveId,Input,AttackLevel,StartupFrames,ActiveFrames,RecoveryFrames,Damage,HitstunFrames,BlockstunFrames,RangeCm,HitboxWidthCm,HitboxHeightCm,Notes
+LightPunch,LP,High,5,2,10,30,12,7,75,40,25,Provisional shared normal
+HeavyPunch,HP,Mid,11,3,17,65,17,11,90,45,32,Provisional shared normal
+LightKick,LK,Mid,7,3,12,35,13,8,92,45,25,Provisional shared normal
+HeavyKick,HK,Mid,13,3,19,70,18,12,115,52,30,Provisional shared normal

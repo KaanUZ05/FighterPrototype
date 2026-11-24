@@ -1,0 +1,60 @@
+﻿ID,Phase,PhaseGate,Task,Path,DependsOn,Status,UserReview
+T001,00,G0,Project Audit And Build,tasks/phase_00/T001_PROJECT_AUDIT_AND_BUILD.md,MCP read probe,PASS,Confirm original ThirdPerson map still opens after baseline; review T001 report.
+T002,00,G0,Mcp Write And Checkpoint,tasks/phase_00/T002_MCP_WRITE_AND_CHECKPOINT.md,T001,NOT_STARTED,Inspect a screenshot or actor-list diff if provided; authorize any git init only if safe.
+T003,00,G0,Test And Report Harness,tasks/phase_00/T003_TEST_AND_REPORT_HARNESS.md,T002,NOT_STARTED,Review test invocation and output.
+T004,00,G0,Fight Module Shell,tasks/phase_00/T004_FIGHT_MODULE_SHELL.md,T003,NOT_STARTED,PIE dedicated map; no unwanted edits to original level.
+T005,01,G1,Symmetric Greybox Stage,tasks/phase_01/T005_SYMMETRIC_GREYBOX_STAGE.md,T004,NOT_STARTED,Check arena visibly symmetric.
+T006,01,G1,Two Fighter Spawn,tasks/phase_01/T006_TWO_FIGHTER_SPAWN.md,T005,NOT_STARTED,Verify two visible bodies before enabling input.
+T007,01,G1,Lock Fighting Plane And Pushbox,tasks/phase_01/T007_LOCK_FIGHTING_PLANE_AND_PUSHBOX.md,T006,NOT_STARTED,Try running fighters into each other and both walls.
+T008,01,G1,Facing And Shared Camera,tasks/phase_01/T008_FACING_AND_SHARED_CAMERA.md,T007,NOT_STARTED,Watch camera when approaching edges.
+T009,01,G1,Player One Enhanced Input,tasks/phase_01/T009_PLAYER_ONE_ENHANCED_INPUT.md,T008,NOT_STARTED,"Play with keyboard, check opposite-facing motion."
+T010,01,G1,Player Two Input Routing,tasks/phase_01/T010_PLAYER_TWO_INPUT_ROUTING.md,T009,NOT_STARTED,Connect gamepad/controller and verify simultaneous control if available.
+T011,01,G1,Shared Locomotion Stats And Tests,tasks/phase_01/T011_SHARED_LOCOMOTION_STATS_AND_TESTS.md,T010,NOT_STARTED,Try movement from both sides; check jump height visually.
+T012,01,G1,G1 Greybox Playability Gate,tasks/phase_01/T012_G1_GREYBOX_PLAYABILITY_GATE.md,T011,NOT_STARTED,User plays two minutes and explicitly approves G1.
+T013,02,G2,Shared Normal Move Data,tasks/phase_02/T013_SHARED_NORMAL_MOVE_DATA.md,T012,NOT_STARTED,Inspect four move values in asset.
+T014,02,G2,Combat 60Hz Logic Clock,tasks/phase_02/T014_COMBAT_60HZ_LOGIC_CLOCK.md,T013,NOT_STARTED,Watch displayed frame counter in PIE.
+T015,02,G2,Input Command Buffer,tasks/phase_02/T015_INPUT_COMMAND_BUFFER.md,T014,NOT_STARTED,Press attack before recovery; should not always fire.
+T016,02,G2,Shared Combat State Machine,tasks/phase_02/T016_SHARED_COMBAT_STATE_MACHINE.md,T015,NOT_STARTED,Watch move startup/recovery with debug HUD.
+T017,02,G2,Normal Attack Activation,tasks/phase_02/T017_NORMAL_ATTACK_ACTIVATION.md,T016,NOT_STARTED,Test each normal at close range.
+T018,02,G2,Canonical Hit And Hurt Boxes,tasks/phase_02/T018_CANONICAL_HIT_AND_HURT_BOXES.md,T017,NOT_STARTED,Turn on box debug display and check contact.
+T019,02,G2,Damage Stun Knockback And Hitstop,tasks/phase_02/T019_DAMAGE_STUN_KNOCKBACK_AND_HITSTOP.md,T018,NOT_STARTED,Confirm LP/HP/Kick feel distinct but equal A/B.
+T020,02,G2,Normals Symmetry Automation,tasks/phase_02/T020_NORMALS_SYMMETRY_AUTOMATION.md,T019,NOT_STARTED,Review actual test report; approve correction if any parity fails.
+T021,02,G2,Combat Gym Debug Display G2,tasks/phase_02/T021_COMBAT_GYM_DEBUG_DISPLAY_G2.md,T020,NOT_STARTED,Play 2 minutes with boxes; approve G2.
+T022,03,G3,Directional Standing Crouch Guard,tasks/phase_03/T022_DIRECTIONAL_STANDING_CROUCH_GUARD.md,T021,NOT_STARTED,Stand/crouch block on both sides.
+T023,03,G3,Hitstun Blockstun Recovery Rules,tasks/phase_03/T023_HITSTUN_BLOCKSTUN_RECOVERY_RULES.md,T022,NOT_STARTED,Spam inputs during block to check no exploit.
+T024,03,G3,Shared Crouch And Jump Normals,tasks/phase_03/T024_SHARED_CROUCH_AND_JUMP_NORMALS.md,T023,NOT_STARTED,Try crouch/jump moves on both fighters.
+T025,03,G3,Simple Universal Combo Chain,tasks/phase_03/T025_SIMPLE_UNIVERSAL_COMBO_CHAIN.md,T024,NOT_STARTED,Perform full chain on each fighter.
+T026,03,G3,Health Ko And Round Reset,tasks/phase_03/T026_HEALTH_KO_AND_ROUND_RESET.md,T025,NOT_STARTED,Finish and restart round twice.
+T027,03,G3,Round Timer And Best Of Three,tasks/phase_03/T027_ROUND_TIMER_AND_BEST_OF_THREE.md,T026,NOT_STARTED,Play full match and inspect score.
+T028,03,G3,Authoritative Hud,tasks/phase_03/T028_AUTHORITATIVE_HUD.md,T027,NOT_STARTED,Visually compare HUD with debugger.
+T029,03,G3,Pause Match Result Rematch,tasks/phase_03/T029_PAUSE_MATCH_RESULT_REMATCH.md,T028,NOT_STARTED,Pause/restart twice; ensure no accidental inputs.
+T030,03,G3,G3 Full Match Regression,tasks/phase_03/T030_G3_FULL_MATCH_REGRESSION.md,T029,NOT_STARTED,Play and approve complete best-of-three match.
+T031,04,G4,Special Data And Behavior Interface,tasks/phase_04/T031_SPECIAL_DATA_AND_BEHAVIOR_INTERFACE.md,T030,NOT_STARTED,Inspect data asset values and unique slot references.
+T032,04,G4,Special Input And Execution State,tasks/phase_04/T032_SPECIAL_INPUT_AND_EXECUTION_STATE.md,T031,NOT_STARTED,Trigger two specials on both slots.
+T033,04,G4,Projectile System,tasks/phase_04/T033_PROJECTILE_SYSTEM.md,T032,NOT_STARTED,Try firing from both sides; watch expiry.
+T034,04,G4,Lunge Skill,tasks/phase_04/T034_LUNGE_SKILL.md,T033,NOT_STARTED,Perform lunge near both arena edges.
+T035,04,G4,Area Attack And Close Burst,tasks/phase_04/T035_AREA_ATTACK_AND_CLOSE_BURST.md,T034,NOT_STARTED,Verify warning and timing are readable.
+T036,04,G4,Four Specials Config And Balance Seed,tasks/phase_04/T036_FOUR_SPECIALS_CONFIG_AND_BALANCE_SEED.md,T035,NOT_STARTED,Suggest adjustments to skill roles for human choice.
+T037,04,G4,G4 Specials Fairness Approval,tasks/phase_04/T037_G4_SPECIALS_FAIRNESS_APPROVAL.md,T036,NOT_STARTED,Approve four mechanical special concepts before character-specific art.
+T038,05,G5,Art Bible And Original Roster Approval,tasks/phase_05/T038_ART_BIBLE_AND_ORIGINAL_ROSTER_APPROVAL.md,T037,NOT_STARTED,"User picks art direction, two distinct looks, names optional."
+T039,05,G5,Fighter A Turnaround,tasks/phase_05/T039_FIGHTER_A_TURNAROUND.md,T038,NOT_STARTED,Approve or request revisions to FighterA images.
+T040,05,G5,Fighter B Turnaround,tasks/phase_05/T040_FIGHTER_B_TURNAROUND.md,T039,NOT_STARTED,Approve or revise FighterB concept.
+T041,05,G5,First Production 3D Mesh,tasks/phase_05/T041_FIRST_PRODUCTION_3D_MESH.md,T040,NOT_STARTED,Inspect full-body mesh in Unreal from three views.
+T042,05,G5,Second Production 3D Mesh,tasks/phase_05/T042_SECOND_PRODUCTION_3D_MESH.md,T041,NOT_STARTED,Inspect two fighters side by side in neutral pose.
+T043,05,G5,Skeleton Rig And Retarget,tasks/phase_05/T043_SKELETON_RIG_AND_RETARGET.md,T042,NOT_STARTED,Check shoulders/hips/knees in animated preview.
+T044,05,G5,Shared Normal Animation Set,tasks/phase_05/T044_SHARED_NORMAL_ANIMATION_SET.md,T043,NOT_STARTED,Watch four normals per fighter in stage context.
+T045,05,G5,Special Animations And G5 Visual Qa,tasks/phase_05/T045_SPECIAL_ANIMATIONS_AND_G5_VISUAL_QA.md,T044,NOT_STARTED,Approve G5 art/animation quality before polish.
+T046,06,G6,Production Arena Lighting,tasks/phase_06/T046_PRODUCTION_ARENA_LIGHTING.md,T045,NOT_STARTED,Approve chosen stage aesthetic.
+T047,06,G6,Main Menu Character Select,tasks/phase_06/T047_MAIN_MENU_CHARACTER_SELECT.md,T046,NOT_STARTED,"Try menu, character select and rematch navigation."
+T048,06,G6,Shared And Unique Vfx,tasks/phase_06/T048_SHARED_AND_UNIQUE_VFX.md,T047,NOT_STARTED,Check readability and reduce overbright effects.
+T049,06,G6,Original Audio And Mix,tasks/phase_06/T049_ORIGINAL_AUDIO_AND_MIX.md,T048,NOT_STARTED,Listen to entire match on headphones/speakers.
+T050,06,G6,Camera Hitstop Victory Presentation,tasks/phase_06/T050_CAMERA_HITSTOP_VICTORY_PRESENTATION.md,T049,NOT_STARTED,"Try slow motion and impact feedback, approve intensity."
+T051,06,G6,Finisher Presentation Infrastructure,tasks/phase_06/T051_FINISHER_PRESENTATION_INFRASTRUCTURE.md,T050,NOT_STARTED,Approve tone and rough choreographic concept before content.
+T052,06,G6,Two Original Finishers,tasks/phase_06/T052_TWO_ORIGINAL_FINISHERS.md,T051,NOT_STARTED,Approve tone and both individual finishers.
+T053,06,G6,G6 Playtest And Polish Gate,tasks/phase_06/T053_G6_PLAYTEST_AND_POLISH_GATE.md,T052,NOT_STARTED,User approves current demo look and feel.
+T054,07,G7,Automated Full Regression,tasks/phase_07/T054_AUTOMATED_FULL_REGRESSION.md,T053,NOT_STARTED,Review full test matrix and major known issues.
+T055,07,G7,Physical Local Two Player Qa,tasks/phase_07/T055_PHYSICAL_LOCAL_TWO_PLAYER_QA.md,T054,NOT_STARTED,Play complete match with two input sources.
+T056,07,G7,Target Pc Performance Profiling,tasks/phase_07/T056_TARGET_PC_PERFORMANCE_PROFILING.md,T055,NOT_STARTED,Play at native screen resolution and report stutter.
+T057,07,G7,Final Ui Accessibility Settings,tasks/phase_07/T057_FINAL_UI_ACCESSIBILITY_SETTINGS.md,T056,NOT_STARTED,Adjust settings and replay a round.
+T058,07,G7,Windows Shipping Package Smoke,tasks/phase_07/T058_WINDOWS_SHIPPING_PACKAGE_SMOKE.md,T057,NOT_STARTED,Launch package outside editor; play full match.
+T059,07,G7,Release Notes Licenses And Final Gate,tasks/phase_07/T059_RELEASE_NOTES_LICENSES_AND_FINAL_GATE.md,T058,NOT_STARTED,User accepts or lists last blocking issues.

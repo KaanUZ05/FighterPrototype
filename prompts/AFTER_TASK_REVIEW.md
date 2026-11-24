@@ -1,0 +1,1 @@
+Please summarize the report for the task you just finished. Give me: (1) exactly what changed in the actual Unreal project, (2) which checks genuinely passed, (3) which checks were not run, (4) remaining issues, and (5) what I should manually test in PIE. Do not edit anything or start the next task unless I explicitly request it.
