@@ -1,6 +1,6 @@
 ﻿ID,Phase,PhaseGate,Task,Path,DependsOn,Status,UserReview
 T001,00,G0,Project Audit And Build,tasks/phase_00/T001_PROJECT_AUDIT_AND_BUILD.md,MCP read probe,PASS,Confirm original ThirdPerson map still opens after baseline; review T001 report.
-T002,00,G0,Mcp Write And Checkpoint,tasks/phase_00/T002_MCP_WRITE_AND_CHECKPOINT.md,T001,NOT_STARTED,Inspect a screenshot or actor-list diff if provided; authorize any git init only if safe.
+T002,00,G0,Mcp Write And Checkpoint,tasks/phase_00/T002_MCP_WRITE_AND_CHECKPOINT.md,T001,PASS,Inspect a screenshot or actor-list diff if provided; authorize any git init only if safe.
 T003,00,G0,Test And Report Harness,tasks/phase_00/T003_TEST_AND_REPORT_HARNESS.md,T002,NOT_STARTED,Review test invocation and output.
 T004,00,G0,Fight Module Shell,tasks/phase_00/T004_FIGHT_MODULE_SHELL.md,T003,NOT_STARTED,PIE dedicated map; no unwanted edits to original level.
 T005,01,G1,Symmetric Greybox Stage,tasks/phase_01/T005_SYMMETRIC_GREYBOX_STAGE.md,T004,NOT_STARTED,Check arena visibly symmetric.

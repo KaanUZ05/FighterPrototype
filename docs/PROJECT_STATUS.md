@@ -1,6 +1,6 @@
 # PROJECT STATUS — handoff log (update after every task)
 
-**Current engineering stage:** PHASE_00 / T001 verified.
+**Current engineering stage:** PHASE_00 / T001 and T002 verified.
 
 ## Observed evidence from the user's Codex result (2026-11-25)
 
@@ -13,24 +13,28 @@
 ## Verified in T001
 
 - Development Editor target succeeded in the project root and from a clean source copy (48 actions, MSVC 14.44, Windows SDK 10.0.22621.0).
-- ThirdPerson PIE launched with `BP_ThirdPersonGameMode_C`; injected `IA_Move` moved the player camera, and PIE stopped successfully.
+- ThirdPerson PIE launched with `BP_ThirdPersonGameMode_C`. Injected `IA_Move` moved the player camera, and PIE stopped successfully.
 - Report and screenshot in [`TASK_001_RESULT.md`](../reports/TASK_001_RESULT.md).
+
+## Verified in T002
+
+- MCP placed, read, saved and undid a PointLight in a scratch level. Cleanup restored the original ThirdPerson level, confirmed the original 72 actors and passed a fresh PIE smoke check.
+- Local `main` has baseline commit `ec6e05b` and `origin` is configured for `KaanUZ05/FighterPrototype`. Git LFS verified 753 Unreal assets. The filesystem rollback checkpoint is `Saved/Phase00/T002-PreEdit/`.
+- Transaction and rollback evidence in [`TASK_002_RESULT.md`](../reports/TASK_002_RESULT.md).
 
 ## Still UNVERIFIED
 
-- Git repository / LFS configuration
-- Reversible MCP edit
 - Dual-input local play
-- Any combat, game assets or tests
+- Fight gameplay, dedicated game assets and automated gameplay tests
 
 ## Completed task IDs
 
-`T001` — PASS.
+`T001` — PASS. `T002` — PASS.
 
 ## Blockers
 
-No build or PIE blocker. The Git audit found no local repository.
+None observed for T003.
 
 ## Next requested task
 
-`T002` — `tasks/phase_00/T002_MCP_WRITE_AND_CHECKPOINT.md`
+`T003` — `tasks/phase_00/T003_TEST_AND_REPORT_HARNESS.md`
