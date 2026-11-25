@@ -1,7 +1,9 @@
 #include "FightGameMode.h"
+#include "FightCameraActor.h"
 #include "FighterCharacter.h"
 #include "FighterMovementComponent.h"
 #include "Engine/GameInstance.h"
+#include "Engine/GameViewportClient.h"
 #include "EngineUtils.h"
 #include "GameFramework/PlayerController.h"
 #include "GameFramework/PlayerStart.h"
@@ -46,6 +48,9 @@ void AFightGameMode::InitializeFighter(AFighterCharacter& Fighter, FName Slot) c
 AFightGameMode::AFightGameMode()
 {
 	DefaultPawnClass = AFighterCharacter::StaticClass();
+	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bStartWithTickEnabled = false;
+	PrimaryActorTick.TickGroup = TG_PostPhysics;
 }
 
 APlayerStart* AFightGameMode::FindSlotStart(FName Slot) const
@@ -84,6 +89,7 @@ void AFightGameMode::RestartPlayer(AController* NewPlayer)
 		{
 			Controller->Possess(Fighter);
 		}
+		SetSharedView(*Controller);
 		return;
 	}
 
@@ -92,6 +98,7 @@ void AFightGameMode::RestartPlayer(AController* NewPlayer)
 	if (Fighter)
 	{
 		InitializeFighter(*Fighter, Index == 0 ? SlotA : SlotB);
+		SetSharedView(*Controller);
 	}
 }
 
@@ -110,4 +117,64 @@ void AFightGameMode::StartPlay()
 			InitializeFighter(*FighterB, SlotB);
 		}
 	}
+
+	if (FighterA && FighterB)
+	{
+		FightCamera = GetWorld()->SpawnActor<AFightCameraActor>();
+		UpdateFightView();
+		SetActorTickEnabled(true);
+		if (UGameViewportClient* Viewport = GetWorld()->GetGameViewport())
+		{
+			bPreviousSplitScreenOverride = Viewport->IsSplitscreenForceDisabled();
+			Viewport->SetForceDisableSplitscreen(true);
+			bChangedSplitScreenOverride = true;
+		}
+		for (FConstPlayerControllerIterator Controller = GetWorld()->GetPlayerControllerIterator(); Controller; ++Controller)
+		{
+			if (APlayerController* Player = Controller->Get())
+			{
+				SetSharedView(*Player);
+			}
+		}
+	}
+}
+
+void AFightGameMode::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+	UpdateFightView();
+}
+
+void AFightGameMode::UpdateFightView()
+{
+	if (IsValid(FighterA) && IsValid(FighterB))
+	{
+		FighterA->FaceOpponent(*FighterB);
+		FighterB->FaceOpponent(*FighterA);
+		if (FightCamera)
+		{
+			FightCamera->FrameFighters(FighterA->GetActorLocation(), FighterB->GetActorLocation());
+		}
+	}
+}
+
+void AFightGameMode::SetSharedView(APlayerController& Controller) const
+{
+	if (FightCamera && Controller.IsLocalController())
+	{
+		Controller.bAutoManageActiveCameraTarget = false;
+		Controller.SetViewTarget(FightCamera);
+	}
+}
+
+void AFightGameMode::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+	if (bChangedSplitScreenOverride)
+	{
+		if (UGameViewportClient* Viewport = GetWorld()->GetGameViewport())
+		{
+			Viewport->SetForceDisableSplitscreen(bPreviousSplitScreenOverride);
+		}
+	}
+	Super::EndPlay(EndPlayReason);
 }

@@ -1,0 +1,38 @@
+{
+  "world": "/Game/Fight/Maps/UEDPIE_0_Lvl_FightGreybox.Lvl_FightGreybox",
+  "camera": "/Game/Fight/Maps/UEDPIE_0_Lvl_FightGreybox.Lvl_FightGreybox:PersistentLevel.FightCameraActor_0",
+  "look_direction_y": -1.0000000000000002,
+  "screen_right_world_x": 1.0000000000000002,
+  "initial_facings": [
+    1.0,
+    -0.9999999999999996
+  ],
+  "after_swap": [
+    [
+      -0.9999999999999996,
+      1.0
+    ],
+    [
+      -0.9999999999999996,
+      1.0
+    ],
+    [
+      -0.9999999999999996,
+      1.0
+    ],
+    [
+      -0.9999999999999996,
+      1.0
+    ],
+    [
+      -0.9999999999999996,
+      1.0
+    ]
+  ],
+  "camera_center_x": -10.0,
+  "ortho_width": 1620.0,
+  "fighters_share_view": true,
+  "second_local_player_reused_b": true,
+  "screenshot": "reports/evidence/T008-Greybox-PIE.png",
+  "pie_stopped": true
+}

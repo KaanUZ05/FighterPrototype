@@ -13,6 +13,7 @@ class FIGHTERPROTOTYPE_API AFighterCharacter : public ACharacter
 public:
 	AFighterCharacter(const FObjectInitializer& ObjectInitializer);
 	void AssignSlot(FName Slot);
+	void FaceOpponent(const AFighterCharacter& Opponent);
 
 private:
 	UPROPERTY(VisibleInstanceOnly, Category = "Fighter")

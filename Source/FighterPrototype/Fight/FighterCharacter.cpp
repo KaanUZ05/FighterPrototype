@@ -44,3 +44,12 @@ void AFighterCharacter::AssignSlot(FName Slot)
 {
 	FighterSlot = Slot;
 }
+
+void AFighterCharacter::FaceOpponent(const AFighterCharacter& Opponent)
+{
+	const double DeltaX = Opponent.GetActorLocation().X - GetActorLocation().X;
+	if (FMath::Abs(DeltaX) > 1.0 && DeltaX * GetActorForwardVector().X < 0.0)
+	{
+		SetActorRotation(FRotator(0.0, DeltaX > 0.0 ? 0.0 : 180.0, 0.0));
+	}
+}

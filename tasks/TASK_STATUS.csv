@@ -6,7 +6,7 @@ T004,00,G0,Fight Module Shell,tasks/phase_00/T004_FIGHT_MODULE_SHELL.md,T003,PAS
 T005,01,G1,Symmetric Greybox Stage,tasks/phase_01/T005_SYMMETRIC_GREYBOX_STAGE.md,T004,PASS,Check arena visibly symmetric.
 T006,01,G1,Two Fighter Spawn,tasks/phase_01/T006_TWO_FIGHTER_SPAWN.md,T005,PASS,Verify two visible bodies before enabling input.
 T007,01,G1,Lock Fighting Plane And Pushbox,tasks/phase_01/T007_LOCK_FIGHTING_PLANE_AND_PUSHBOX.md,T006,PASS,Try running fighters into each other and both walls.
-T008,01,G1,Facing And Shared Camera,tasks/phase_01/T008_FACING_AND_SHARED_CAMERA.md,T007,NOT_STARTED,Watch camera when approaching edges.
+T008,01,G1,Facing And Shared Camera,tasks/phase_01/T008_FACING_AND_SHARED_CAMERA.md,T007,PASS,Watch camera when approaching edges.
 T009,01,G1,Player One Enhanced Input,tasks/phase_01/T009_PLAYER_ONE_ENHANCED_INPUT.md,T008,NOT_STARTED,"Play with keyboard, check opposite-facing motion."
 T010,01,G1,Player Two Input Routing,tasks/phase_01/T010_PLAYER_TWO_INPUT_ROUTING.md,T009,NOT_STARTED,Connect gamepad/controller and verify simultaneous control if available.
 T011,01,G1,Shared Locomotion Stats And Tests,tasks/phase_01/T011_SHARED_LOCOMOTION_STATS_AND_TESTS.md,T010,NOT_STARTED,Try movement from both sides; check jump height visually.

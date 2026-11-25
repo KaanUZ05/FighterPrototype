@@ -1,6 +1,6 @@
 # PROJECT STATUS — handoff log (update after every task)
 
-**Current engineering stage:** PHASE_01 / T007 verified. Owner authorized the transition to Phase 01.
+**Current engineering stage:** PHASE_01 / T008 verified. Owner authorized the transition to Phase 01.
 
 ## Observed evidence from the user's Codex result (2026-11-25)
 
@@ -39,7 +39,7 @@
 
 ## Completed task IDs
 
-`T001`–`T007` — PASS. [T005 stage evidence](../reports/TASK_005_RESULT.md). [T006 spawn evidence](../reports/TASK_006_RESULT.md). [T007 movement limits](../reports/TASK_007_RESULT.md).
+`T001`–`T008` — PASS. [T005 stage evidence](../reports/TASK_005_RESULT.md). [T006 spawn evidence](../reports/TASK_006_RESULT.md). [T007 movement limits](../reports/TASK_007_RESULT.md). [T008 facing and camera](../reports/TASK_008_RESULT.md).
 
 ## Blockers
 
@@ -47,4 +47,4 @@ No technical blocker observed.
 
 ## Next requested task
 
-`T008` — Facing and Shared Camera.
+`T009` — Player One Enhanced Input.
