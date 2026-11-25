@@ -1,6 +1,6 @@
 # PROJECT STATUS — handoff log (update after every task)
 
-**Current engineering stage:** PHASE_00 / T001 through T004 verified. G0 owner review pending.
+**Current engineering stage:** PHASE_01 / T005 verified. Owner authorized the transition to Phase 01.
 
 ## Observed evidence from the user's Codex result (2026-11-25)
 
@@ -35,16 +35,16 @@
 ## Still UNVERIFIED
 
 - Dual-input local play
-- Fight gameplay, the greybox arena and automated gameplay tests
+- Two-fighter play, movement and automated gameplay tests
 
 ## Completed task IDs
 
-`T001` — PASS. `T002` — PASS. `T003` — PASS. `T004` — PASS.
+`T001`–`T005` — PASS. [T005 stage evidence](../reports/TASK_005_RESULT.md).
 
 ## Blockers
 
-No technical blocker observed. G0 owner review precedes Phase 01.
+No technical blocker observed.
 
 ## Next requested task
 
-`T005` — `tasks/phase_01/T005_SYMMETRIC_GREYBOX_STAGE.md` after G0 owner approval.
+`T006` — Two Fighter Spawn.

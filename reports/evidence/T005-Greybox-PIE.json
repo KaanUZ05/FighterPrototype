@@ -1,0 +1,55 @@
+{
+  "world": "/Game/Fight/Maps/UEDPIE_0_Lvl_FightGreybox.Lvl_FightGreybox",
+  "game_mode": "FightGameMode",
+  "pawn": "FighterCharacter",
+  "floor": {
+    "center": [
+      0.0,
+      0.0,
+      -25.0
+    ],
+    "extent": [
+      800.0,
+      300.0,
+      25.0
+    ]
+  },
+  "left_wall": {
+    "center": [
+      -780.0,
+      0.0,
+      200.0
+    ],
+    "extent": [
+      20.0,
+      300.0,
+      200.0
+    ]
+  },
+  "right_wall": {
+    "center": [
+      780.0,
+      0.0,
+      200.0
+    ],
+    "extent": [
+      20.0,
+      300.0,
+      200.0
+    ]
+  },
+  "starts": [
+    [
+      -220.0,
+      0.0,
+      100.0
+    ],
+    [
+      220.0,
+      0.0,
+      100.0
+    ]
+  ],
+  "screenshot": "reports/evidence/T005-Greybox-PIE.png",
+  "pie_stopped": true
+}
