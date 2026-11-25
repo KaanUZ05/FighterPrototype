@@ -4,7 +4,7 @@ T002,00,G0,Mcp Write And Checkpoint,tasks/phase_00/T002_MCP_WRITE_AND_CHECKPOINT
 T003,00,G0,Test And Report Harness,tasks/phase_00/T003_TEST_AND_REPORT_HARNESS.md,T002,PASS,Review test invocation and output.
 T004,00,G0,Fight Module Shell,tasks/phase_00/T004_FIGHT_MODULE_SHELL.md,T003,PASS,PIE dedicated map; no unwanted edits to original level.
 T005,01,G1,Symmetric Greybox Stage,tasks/phase_01/T005_SYMMETRIC_GREYBOX_STAGE.md,T004,PASS,Check arena visibly symmetric.
-T006,01,G1,Two Fighter Spawn,tasks/phase_01/T006_TWO_FIGHTER_SPAWN.md,T005,NOT_STARTED,Verify two visible bodies before enabling input.
+T006,01,G1,Two Fighter Spawn,tasks/phase_01/T006_TWO_FIGHTER_SPAWN.md,T005,PASS,Verify two visible bodies before enabling input.
 T007,01,G1,Lock Fighting Plane And Pushbox,tasks/phase_01/T007_LOCK_FIGHTING_PLANE_AND_PUSHBOX.md,T006,NOT_STARTED,Try running fighters into each other and both walls.
 T008,01,G1,Facing And Shared Camera,tasks/phase_01/T008_FACING_AND_SHARED_CAMERA.md,T007,NOT_STARTED,Watch camera when approaching edges.
 T009,01,G1,Player One Enhanced Input,tasks/phase_01/T009_PLAYER_ONE_ENHANCED_INPUT.md,T008,NOT_STARTED,"Play with keyboard, check opposite-facing motion."

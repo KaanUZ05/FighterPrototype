@@ -1,0 +1,43 @@
+#include "FighterCharacter.h"
+#include "SharedFighterStats.h"
+#include "Components/CapsuleComponent.h"
+#include "Components/StaticMeshComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
+#include "UObject/ConstructorHelpers.h"
+
+AFighterCharacter::AFighterCharacter()
+{
+	SharedStats = GetMutableDefault<USharedFighterStats>();
+	const float Radius = SharedStats->CapsuleRadius;
+	const float HalfHeight = SharedStats->StandingHalfHeight;
+	GetCapsuleComponent()->InitCapsuleSize(Radius, HalfHeight);
+	GetCharacterMovement()->bRunPhysicsWithNoController = true;
+	bUseControllerRotationYaw = false;
+
+	CapsuleVisual = CreateDefaultSubobject<USceneComponent>(TEXT("CapsuleVisual"));
+	CapsuleVisual->SetupAttachment(GetCapsuleComponent());
+
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> Cylinder(TEXT("/Engine/BasicShapes/Cylinder.Cylinder"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> Sphere(TEXT("/Engine/BasicShapes/Sphere.Sphere"));
+	const float DiameterScale = Radius / 50.0f;
+	const float CapOffset = HalfHeight - Radius;
+	const auto AddVisualPart = [this, DiameterScale](FName Name, UStaticMesh* VisualMesh, float Z, float HeightScale)
+	{
+		UStaticMeshComponent* Part = CreateDefaultSubobject<UStaticMeshComponent>(Name);
+		Part->SetupAttachment(CapsuleVisual);
+		Part->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		Part->SetGenerateOverlapEvents(false);
+		Part->SetCanEverAffectNavigation(false);
+		Part->SetStaticMesh(VisualMesh);
+		Part->SetRelativeLocation(FVector(0.0, 0.0, Z));
+		Part->SetRelativeScale3D(FVector(DiameterScale, DiameterScale, HeightScale));
+	};
+	AddVisualPart(TEXT("CapsuleBody"), Cylinder.Object, 0.0f, CapOffset / 50.0f);
+	AddVisualPart(TEXT("CapsuleTop"), Sphere.Object, CapOffset, DiameterScale);
+	AddVisualPart(TEXT("CapsuleBottom"), Sphere.Object, -CapOffset, DiameterScale);
+}
+
+void AFighterCharacter::AssignSlot(FName Slot)
+{
+	FighterSlot = Slot;
+}

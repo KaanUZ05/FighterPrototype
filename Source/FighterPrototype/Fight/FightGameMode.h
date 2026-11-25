@@ -3,6 +3,9 @@
 #include "GameFramework/GameModeBase.h"
 #include "FightGameMode.generated.h"
 
+class AFighterCharacter;
+class APlayerStart;
+
 UCLASS()
 class FIGHTERPROTOTYPE_API AFightGameMode : public AGameModeBase
 {
@@ -10,4 +13,15 @@ class FIGHTERPROTOTYPE_API AFightGameMode : public AGameModeBase
 
 public:
 	AFightGameMode();
+	void StartPlay() override;
+	void RestartPlayer(AController* NewPlayer) override;
+
+private:
+	APlayerStart* FindSlotStart(FName Slot) const;
+
+	UPROPERTY(Transient)
+	TObjectPtr<AFighterCharacter> FighterA;
+
+	UPROPERTY(Transient)
+	TObjectPtr<AFighterCharacter> FighterB;
 };

@@ -1,0 +1,34 @@
+{
+  "world": "/Game/Fight/Maps/UEDPIE_0_Lvl_FightGreybox.Lvl_FightGreybox",
+  "fighters": [
+    "/Game/Fight/Maps/UEDPIE_0_Lvl_FightGreybox.Lvl_FightGreybox:PersistentLevel.FighterCharacter_0",
+    "/Game/Fight/Maps/UEDPIE_0_Lvl_FightGreybox.Lvl_FightGreybox:PersistentLevel.FighterCharacter_1"
+  ],
+  "slots": [
+    "FighterA",
+    "FighterB"
+  ],
+  "positions": [
+    [
+      -220.0,
+      0.0,
+      92.14999628067017
+    ],
+    [
+      220.0,
+      0.0,
+      92.14999628067017
+    ]
+  ],
+  "initial_facings": [
+    1.0,
+    -0.9999999999999996
+  ],
+  "shared_stats": "/Script/FighterPrototype.Default__SharedFighterStats",
+  "restart_player_calls": 3,
+  "fighters_after_restart": 2,
+  "first_player_owns_a": true,
+  "second_fighter_is_dummy": true,
+  "screenshot": "reports/evidence/T006-Greybox-PIE.png",
+  "pie_stopped": true
+}
