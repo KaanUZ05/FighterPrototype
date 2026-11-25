@@ -1,0 +1,14 @@
+{
+  "world": "/Game/Fight/Maps/UEDPIE_0_Lvl_FightGreybox.Lvl_FightGreybox",
+  "spawn_x": [
+    -220.0,
+    220.0
+  ],
+  "fighters": 2,
+  "min_walking_center_gap_cm": 76.10063293558251,
+  "launch_max_height_cm": 1216.7864139490198,
+  "launch_max_abs_y_cm": 0.0,
+  "minimum_x_cm": -722.0,
+  "maximum_x_cm": 722.0,
+  "pie_stopped": true
+}

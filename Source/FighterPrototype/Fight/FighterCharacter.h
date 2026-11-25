@@ -11,7 +11,7 @@ class FIGHTERPROTOTYPE_API AFighterCharacter : public ACharacter
 	GENERATED_BODY()
 
 public:
-	AFighterCharacter();
+	AFighterCharacter(const FObjectInitializer& ObjectInitializer);
 	void AssignSlot(FName Slot);
 
 private:

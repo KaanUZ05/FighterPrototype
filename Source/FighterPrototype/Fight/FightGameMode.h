@@ -18,6 +18,7 @@ public:
 
 private:
 	APlayerStart* FindSlotStart(FName Slot) const;
+	void InitializeFighter(AFighterCharacter& Fighter, FName Slot) const;
 
 	UPROPERTY(Transient)
 	TObjectPtr<AFighterCharacter> FighterA;

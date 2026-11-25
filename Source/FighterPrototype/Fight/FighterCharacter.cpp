@@ -1,16 +1,19 @@
 #include "FighterCharacter.h"
+#include "FighterMovementComponent.h"
 #include "SharedFighterStats.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "UObject/ConstructorHelpers.h"
 
-AFighterCharacter::AFighterCharacter()
+AFighterCharacter::AFighterCharacter(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer.SetDefaultSubobjectClass<UFighterMovementComponent>(CharacterMovementComponentName))
 {
 	SharedStats = GetMutableDefault<USharedFighterStats>();
 	const float Radius = SharedStats->CapsuleRadius;
 	const float HalfHeight = SharedStats->StandingHalfHeight;
 	GetCapsuleComponent()->InitCapsuleSize(Radius, HalfHeight);
+	GetCapsuleComponent()->CanCharacterStepUpOn = ECB_No;
 	GetCharacterMovement()->bRunPhysicsWithNoController = true;
 	bUseControllerRotationYaw = false;
 

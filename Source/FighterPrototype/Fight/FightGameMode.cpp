@@ -1,5 +1,6 @@
 #include "FightGameMode.h"
 #include "FighterCharacter.h"
+#include "FighterMovementComponent.h"
 #include "Engine/GameInstance.h"
 #include "EngineUtils.h"
 #include "GameFramework/PlayerController.h"
@@ -9,6 +10,37 @@ namespace
 {
 	const FName SlotA(TEXT("FighterA"));
 	const FName SlotB(TEXT("FighterB"));
+	const FName LeftBoundTag(TEXT("FightStageLeftBound"));
+	const FName RightBoundTag(TEXT("FightStageRightBound"));
+}
+
+void AFightGameMode::InitializeFighter(AFighterCharacter& Fighter, FName Slot) const
+{
+	Fighter.AssignSlot(Slot);
+	TOptional<double> LeftFace;
+	TOptional<double> RightFace;
+	for (TActorIterator<AActor> Actor(GetWorld()); Actor; ++Actor)
+	{
+		const bool bLeft = Actor->ActorHasTag(LeftBoundTag);
+		if (bLeft || Actor->ActorHasTag(RightBoundTag))
+		{
+			FVector Center;
+			FVector Extent;
+			Actor->GetActorBounds(true, Center, Extent);
+			if (bLeft)
+			{
+				LeftFace = Center.X + Extent.X;
+			}
+			else
+			{
+				RightFace = Center.X - Extent.X;
+			}
+		}
+	}
+	if (LeftFace.IsSet() && RightFace.IsSet() && *LeftFace < *RightFace)
+	{
+		CastChecked<UFighterMovementComponent>(Fighter.GetCharacterMovement())->SetStageFaces(*LeftFace, *RightFace);
+	}
 }
 
 AFightGameMode::AFightGameMode()
@@ -59,7 +91,7 @@ void AFightGameMode::RestartPlayer(AController* NewPlayer)
 	Fighter = Cast<AFighterCharacter>(Controller->GetPawn());
 	if (Fighter)
 	{
-		Fighter->AssignSlot(Index == 0 ? SlotA : SlotB);
+		InitializeFighter(*Fighter, Index == 0 ? SlotA : SlotB);
 	}
 }
 
@@ -75,7 +107,7 @@ void AFightGameMode::StartPlay()
 		FighterB = GetWorld()->SpawnActor<AFighterCharacter>(DefaultPawnClass, StartB->GetActorTransform(), Spawn);
 		if (FighterB)
 		{
-			FighterB->AssignSlot(SlotB);
+			InitializeFighter(*FighterB, SlotB);
 		}
 	}
 }

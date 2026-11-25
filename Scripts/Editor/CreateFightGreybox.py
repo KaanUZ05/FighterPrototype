@@ -33,15 +33,17 @@ def spawn(actor_class, label, location, rotation=None):
     actor.set_actor_label(label)
     return actor
 
-def block(label, location, scale):
+def block(label, location, scale, tag=None):
     actor = spawn(unreal.StaticMeshActor, label, location)
     actor.static_mesh_component.set_static_mesh(cube)
     actor.static_mesh_component.set_collision_profile_name('BlockAll')
     actor.set_actor_scale3d(unreal.Vector(*scale))
+    if tag:
+        actor.set_editor_property('tags', [unreal.Name(tag)])
 
 block('StageFloor', (0, 0, -25), (16, 6, 0.5))
-block('StageWallLeft', (-780, 0, 200), (0.4, 6, 4))
-block('StageWallRight', (780, 0, 200), (0.4, 6, 4))
+block('StageWallLeft', (-780, 0, 200), (0.4, 6, 4), 'FightStageLeftBound')
+block('StageWallRight', (780, 0, 200), (0.4, 6, 4), 'FightStageRightBound')
 
 for slot, x, yaw in [('FighterA', -220, 0), ('FighterB', 220, 180)]:
     start = spawn(unreal.PlayerStart, slot + 'Start', (x, 0, 100), unreal.Rotator(yaw=yaw))
