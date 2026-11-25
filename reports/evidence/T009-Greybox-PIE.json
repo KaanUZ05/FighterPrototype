@@ -1,0 +1,46 @@
+{
+  "world": "/Game/Fight/Maps/UEDPIE_0_Lvl_FightGreybox.Lvl_FightGreybox",
+  "keyboard_bindings": [
+    [
+      "A",
+      "IA_FightMoveHorizontal",
+      1
+    ],
+    [
+      "D",
+      "IA_FightMoveHorizontal",
+      0
+    ],
+    [
+      "W",
+      "IA_FightJump",
+      0
+    ],
+    [
+      "S",
+      "IA_FightCrouch",
+      0
+    ]
+  ],
+  "d_displacement_cm": 127.59840418416002,
+  "a_displacement_cm": -99.08713854791289,
+  "forward_backward_speed_cm_per_s": [
+    450.0,
+    340.0
+  ],
+  "mirrored_forward_backward_speed_cm_per_s": [
+    450.0,
+    340.0
+  ],
+  "jump_height_sample_cm": 104.84436881263969,
+  "landed_z_cm": 92.14999762667713,
+  "crouched_standing_half_heights_cm": [
+    52.0,
+    90.0
+  ],
+  "second_local_pawn_unchanged": true,
+  "max_depth_drift_cm": 0.0,
+  "shared_camera": true,
+  "screenshot": "reports/evidence/T009-Greybox-PIE.png",
+  "pie_stopped": true
+}

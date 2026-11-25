@@ -1,5 +1,6 @@
 #include "FightGameMode.h"
 #include "FightCameraActor.h"
+#include "FightPlayerController.h"
 #include "FighterCharacter.h"
 #include "FighterMovementComponent.h"
 #include "Engine/GameInstance.h"
@@ -48,6 +49,7 @@ void AFightGameMode::InitializeFighter(AFighterCharacter& Fighter, FName Slot) c
 AFightGameMode::AFightGameMode()
 {
 	DefaultPawnClass = AFighterCharacter::StaticClass();
+	PlayerControllerClass = AFightPlayerController::StaticClass();
 	PrimaryActorTick.bCanEverTick = true;
 	PrimaryActorTick.bStartWithTickEnabled = false;
 	PrimaryActorTick.TickGroup = TG_PostPhysics;
